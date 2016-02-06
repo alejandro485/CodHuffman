@@ -49,11 +49,9 @@ public class Codificacion {
 				if(matrizCodificacion[0][ubicacionActual]==numB && matrizCodificacion[1][ubicacionActual]==-1){
 					if(numE1==-1){
 						numE1=ubicacionActual;
-						System.out.println("Asignacion del primer numero en: "+ubicacionActual);
 					}
 					else{
 						numE2=ubicacionActual;
-						System.out.println("Asignacion del segundo numero en: "+ubicacionActual);
 						break;
 					}
 				}
@@ -61,7 +59,6 @@ public class Codificacion {
 			}
 			if(matrizCodificacion[0][ubicacionActual]==-1){
 				numB++;
-				System.out.println("Aumento del numero buscado en: "+numB);
 			}
 			else{
 				for(int i=0;i<52;i++){//creacion de la cajetilla para el arbol
@@ -87,7 +84,6 @@ public class Codificacion {
 					numEV++;
 				}
 			}
-			System.out.println("Espacios en blanco: "+numEV);
 			if(numEV==1){
 				validacionContinuacion=false;
 			}
