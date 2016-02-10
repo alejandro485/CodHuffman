@@ -7,9 +7,12 @@ public class Codificacion {
 	String entradaOriginal;
 	int[][] matrizCodificacion;
 	public Arbol arbol;
+	public int valorComprimido;
+	public int valorInicial;
 	
 	public void recepcion(String ent){
 		entradaOriginal=ent;
+		valorInicial=entradaOriginal.length()*8;
 		entrada=ent;
 		//variables para la frecuencia de los caracteres
 		String str=null;
@@ -35,7 +38,6 @@ public class Codificacion {
 		//recoleccion de frecuencia
 		while(contador<26){
 			str=Character.toString((char)(97+contador));
-			System.out.println("Caracter actual: "+str);
 			rec=StringUtils.countMatches(entrada,str );
 			matrizCodificacion[0][contador]=rec;
 			entrada.replaceAll(str, "");
@@ -71,7 +73,6 @@ public class Codificacion {
 						ubicacionActual=i;
 						numE2=-1;
 						numE1=-1;
-						System.out.println("Asignacion de campo con hijos en :"+i);
 						break;
 					}
 				}
@@ -141,6 +142,7 @@ public class Codificacion {
 		}
 		System.out.print(esp+"|-"+n.contenido);
 		if(n.nodoDerecho==null && n.nodoIzquierdo==null){
+			valorComprimido+= matrizCodificacion[0][(int)n.contenido.charAt(0)-97]*cod.length();
 			System.out.print(" - cod: "+cod);
 		}
 		else{
