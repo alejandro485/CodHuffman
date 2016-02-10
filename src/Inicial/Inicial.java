@@ -19,6 +19,14 @@ public class Inicial {
 		System.out.println();
 		System.out.println("Valor inicial de bits: "+c.valorInicial);
 		System.out.println("Valor comprimido de bits: "+c.valorComprimido);
-		System.out.println("Codificado: "+(c.valorComprimido*100/c.valorInicial)+"%");
+		double t=100*(c.valorComprimido/c.valorInicial);
+		
+		System.out.print("Codificado: ");
+		System.out.printf("%.3f", t);
+		System.out.print("%");
+		System.out.println();
+		System.out.print("Ahorro: ");
+		System.out.printf("%.3f", (100-t));
+		System.out.print("%");
 	}
 }

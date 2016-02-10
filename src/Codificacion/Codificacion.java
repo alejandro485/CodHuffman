@@ -7,8 +7,8 @@ public class Codificacion {
 	String entradaOriginal;
 	int[][] matrizCodificacion;
 	public Arbol arbol;
-	public int valorComprimido;
-	public int valorInicial;
+	public float valorComprimido;
+	public float valorInicial;
 	
 	public void recepcion(String ent){
 		entradaOriginal=ent;
