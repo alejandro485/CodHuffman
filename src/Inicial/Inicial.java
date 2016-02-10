@@ -3,6 +3,7 @@ package Inicial;
 import java.util.Scanner;
 
 import Codificacion.Codificacion;
+import Vista.PantallaJuego;
 
 public class Inicial {
 	private static Scanner scanner;
@@ -28,5 +29,6 @@ public class Inicial {
 		System.out.print("Ahorro: ");
 		System.out.printf("%.3f", (100-t));
 		System.out.print("%");
+		new PantallaJuego(c.arbol.cabeza);
 	}
 }
