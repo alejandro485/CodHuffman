@@ -30,5 +30,7 @@ public class Inicial {
 		System.out.printf("%.3f", (100-t));
 		System.out.print("%");
 		new Pantalla(c.arbol.cabeza);
+		System.out.println();
+		c.textoE();
 	}
 }

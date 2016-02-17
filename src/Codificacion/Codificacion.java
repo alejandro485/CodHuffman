@@ -1,4 +1,6 @@
 package Codificacion;
+import java.util.HashMap;
+
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -9,6 +11,7 @@ public class Codificacion {
 	public Arbol arbol;
 	public float valorComprimido;
 	public float valorInicial;
+	private HashMap<String, String> datos;
 	
 	public void recepcion(String ent){
 		entradaOriginal=ent;
@@ -114,6 +117,7 @@ public class Codificacion {
 			}
 		}
 		arbol=new Arbol();
+		datos=new HashMap<String, String>();
 		arbol.cabeza=generarNodo(j);
 	}
 	
@@ -144,6 +148,7 @@ public class Codificacion {
 		if(n.nodoDerecho==null && n.nodoIzquierdo==null){
 			valorComprimido+= matrizCodificacion[0][(int)n.contenido.charAt(0)-97]*cod.length();
 			System.out.print(" - cod: "+cod);
+			datos.put(n.contenido, cod);
 		}
 		else{
 			if(n.nodoIzquierdo!=null){
@@ -154,6 +159,22 @@ public class Codificacion {
 				System.out.println();
 				pintarArbol(espacios+2, cod+"1", n.nodoDerecho);
 			}
+		}
+	}
+	
+	public void textoE(){
+		System.out.println("Texto encriptado");
+		int a2;
+		for(int i=0;i<entradaOriginal.length();i++){
+			System.out.print(entradaOriginal.charAt(i));
+			a2=datos.get(entradaOriginal.charAt(i)+"").length();
+			for(int j=0;j<a2-1;j++){
+				System.out.print(" ");
+			}
+		}
+		System.out.println();
+		for(int i=0;i<entradaOriginal.length();i++){
+			System.out.print(datos.get(entradaOriginal.charAt(i)+""));
 		}
 	}
 	
